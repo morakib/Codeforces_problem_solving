@@ -1,0 +1,18 @@
+#include<stdio.h>
+ 
+    int main(){
+        int A[51],n,x,k,i,ct=0;
+        scanf("%d %d",&n,&k);
+        for(i=0;i<n;i++){
+            scanf("%d",&A[i]);
+        }
+        for(i=0;i<n;i++){
+            if((A[i]>=A[k-1])&&A[i]>0){
+ 
+                ct++;
+            }
+        }
+        printf("%d",ct);
+ 
+    return 0;
+}
