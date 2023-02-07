@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+   int t;
+   cin>>t;
+   while(t--){
+      int n,c;
+      int ct=0;
+      long long sum=0;
+      cin>>n>>c;
+      int A[n];
+      for(int i=0;i<n;i++){
+         cin>>A[i];
+         A[i]=A[i]+i+1;
+      }
+      sort(A,A+n);
+      for(int i=0;i<n;i++){
+         sum+=A[i];
+         if(sum>c){
+            break;
+         }else{
+            ct++;
+            continue;
+         }
+      }
+      cout<<ct<<"\n";
+   }
+
+   return 0;
+}
