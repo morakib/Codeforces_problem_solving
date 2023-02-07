@@ -1,32 +1,42 @@
+// 5
+// 2
+// aa
+// 7
+// abcabcd
+// 5
+// aaaaa
+// 10
+// paiumoment
+// 4
+// aazz
+//-------------
+// 2
+// 7
+// 2
+// 10
+// 3
 #include <bits/stdc++.h>
 using namespace std;
-
-#define ll long long int
-#define Faster ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-
-
-
-
 int main(){
-    Faster;
-    int t;                  cin>>t;
+    //Faster;
+    int t;                 cin>>t;
     while(t--){
         int n;              cin>>n;
         string a;           cin>>a;
-
-        vector<int> pref(n,0),suff(n,0);
+        vector<int>pref(n,0),suff(n,0);
         set<char> s;
+                                 //set e insert hoi push_back hoina.
         for(int i=0;i<n;i++){
-            s.insert(a[i]);
-            pref[i]=s.size();
-        }
-        s.clear();
+            s.insert(a[i]);      //element input nise.
+            pref[i]=s.size();    //set distinct element niye hoi tai jkhn eki element duibar dibe tokhn oita nibe na set.
+        }                        // 0 to (n-1) ***.
+        s.clear();               ///ekta set diye duita cover korse tai clear kore dise.
         for(int i=n-1;i>-1;i--){
             s.insert(a[i]);
-            suff[i]=s.size();
-        }
+            suff[i]=s.size();    //ebar abar pisonerr dike theke nise .
+        }                        //(n-1) to 0 ***.
         int ans=0;
-        for(int i=0;i<n-1;i++){
+        for(int i=0;i<n-1;i++){  // eta 0 to (n-1) porjonto cholbee karon suf er ta i+1 porjonto cholbe.
             ans=max(ans,pref[i]+suff[i+1]);
         }
         cout<<ans<<endl;
