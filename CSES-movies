@@ -7,11 +7,18 @@ int main(){
 	for(int i=0;i<n;i++){
 		int x,y;
 		cin>>x>>y;                      
-		movies.push_back({y,x});        //pair e first element sort hoi tai age y jeta ending time seta pushback korbo
+		movies.push_back({y,x});        
+			// pair e first element sort hoi tai age y push jeta ending time
+			// tarpor x pushback korbo
+			// ar jei movie joto age sesh hbe seta sesh korei ami arekta movie dekte parbo
+			// tai last element gula nite hobe 
+			// seglay sort korbo
 	}
 	sort(movies.begin(),movies.end());
 	int start=movies[0].first;
-	int watched=1;
+			// ekta dekte dhukboi ar eta tratri sesh hbe karon sesh time onujayii sort kra ase
+	int watched=1; 
+			//ekta emni dekte parbo ar koto  gula dekte parbo seta bar korte hbe
 	for(int i=1;i<n;i++){
 		if(movies[i].second>=start){
 			start=movies[i].first;
