@@ -15,6 +15,11 @@ int main(){
 	}
 	sort(customers.begin(),customers.end());
 	int original=0,mx=0;
+			///ekta max arekta original newar karon ki?
+			///cz ekta just max koto duitar mdde seta ber korbe hosse mx
+			///ar original ta agate thakbe ekjon dhuklo +1 hbe ekjon ber hole -1
+			///ekhn ekjon thaka obsthay arekjn entry krle +2 hhye jabe trpr jkhn ber hbe 
+			///tkhn 1 hye jabe abar toh mx ta seitay calculate korbe mx ta kkhn hossse ar mx ta koto!! 
 	for(int i=0;i<customers.size();i++){
 		original+=customers[i].second;
 		mx=max(mx,original);
