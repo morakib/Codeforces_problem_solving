@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define Y cout<<"YES\n";
+#define N cout<<"NO\n";
+int main()
+{
+    string s;
+    cin>>s;
+    // firstly we need 2 pointers one is start and another is end
+    int start=0;
+    int end=0;
+    int mx=INT_MIN;
+    set<char> S;
+    while(start<s.size()){
+        auto it=S.find(s[start]);
+        if(it==S.end()){
+            if(start-end+1>mx){
+                mx=start-end+1;
+            }
+            S.insert(s[start]);
+            start++;
+        }else{
+            S.erase(s[end]);
+            end++;
+        }
+    }
+    cout<<mx;
+    return 0;
+}
